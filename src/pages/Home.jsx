@@ -37,67 +37,77 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
-      <header className="border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-900">Quralis Ilm</h1>
-          <nav className="hidden md:flex gap-8">
-            <Link to="/" className="text-gray-600 hover:text-gray-900 font-medium">Learn</Link>
-            <Link to="/quran" className="text-gray-600 hover:text-gray-900 font-medium">Quran</Link>
-            <Link to="/prayer" className="text-gray-600 hover:text-gray-900 font-medium">Prayer</Link>
-            <Link to="/chat" className="text-gray-600 hover:text-gray-900 font-medium">Q&A</Link>
-          </nav>
-        </div>
+      <header className="w-full px-4 py-6 sm:px-8">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Quralis Ilm</h1>
       </header>
 
       {/* Hero Section */}
-      <section className="flex-1 flex flex-col items-center justify-center py-20 px-4">
-        <div className="text-center max-w-2xl">
-          <p className="text-gray-500 text-sm font-medium uppercase tracking-widest mb-4">Discover Islamic Knowledge</p>
-          <h2 className="text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">Learn Quran,</h2>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+      <section className="w-full px-4 sm:px-8 py-12 sm:py-20 flex flex-col items-center justify-center">
+        <div className="w-full max-w-2xl text-center">
+          <p className="text-xs sm:text-sm text-gray-500 font-medium tracking-wide mb-4 sm:mb-6">
+            Discover Islamic Knowledge
+          </p>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
+            Learn Quran,
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12 leading-relaxed">
             Your comprehensive platform for Islamic education, prayer tracking, and Quranic knowledge with modern tools and authentic references.
           </p>
           <Link 
             to="/quran" 
-            className="inline-block px-8 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition"
+            className="inline-block text-sm sm:text-base font-semibold text-gray-900 hover:text-gray-700 transition"
           >
             Learn More
           </Link>
         </div>
       </section>
 
+      {/* Spacing */}
+      <div className="h-8 sm:h-16"></div>
+
       {/* Features Section */}
-      <section className="max-w-6xl mx-auto w-full px-4 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature) => (
-            <div 
-              key={feature.name} 
-              className="bg-white rounded-xl border border-gray-100 p-8 flex flex-col items-center text-center hover:shadow-md transition"
-            >
-              <div className="text-5xl mb-6">{feature.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.name}</h3>
-              <p className="text-gray-600 text-sm mb-6">{feature.description}</p>
-              <Link 
-                to={feature.link} 
-                className="font-semibold text-gray-900 hover:text-gray-700 flex items-center gap-2"
+      <section className="w-full px-4 sm:px-8 py-8 sm:py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+            {features.map((feature) => (
+              <div 
+                key={feature.name}
+                className="border border-gray-200 rounded-lg sm:rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center hover:shadow-sm transition"
               >
-                Explore <span>→</span>
-              </Link>
-            </div>
-          ))}
+                <div className="text-4xl sm:text-5xl mb-4 sm:mb-6">{feature.icon}</div>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+                  {feature.name}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8 flex-grow">
+                  {feature.description}
+                </p>
+                <Link 
+                  to={feature.link}
+                  className="text-sm font-semibold text-gray-900 hover:text-gray-700 transition"
+                >
+                  Explore &rarr;
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
+      {/* Spacing */}
+      <div className="h-8 sm:h-16"></div>
+
       {/* Call to Action Section */}
-      <section className="bg-gray-900 py-16 w-full mt-8">
-        <div className="max-w-3xl mx-auto text-center px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Start Your Islamic Journey Today</h2>
-          <p className="text-lg text-gray-300 mb-8">
+      <section className="w-full bg-gradient-to-b from-gray-900 to-gray-950 py-12 sm:py-20 px-4 sm:px-8 mt-auto">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+            Start Your Islamic Journey Today
+          </h2>
+          <p className="text-sm sm:text-base text-gray-300 mb-8 sm:mb-10 leading-relaxed">
             Join thousands of users discovering deeper connections with Islamic knowledge and practices.
           </p>
           <Link 
-            to="/chat" 
-            className="inline-block px-8 py-3 bg-white text-gray-900 font-bold rounded-full hover:bg-gray-100 transition"
+            to="/chat"
+            className="inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-gray-900 font-semibold text-sm sm:text-base rounded-full hover:bg-gray-100 transition"
           >
             Begin Now
           </Link>
